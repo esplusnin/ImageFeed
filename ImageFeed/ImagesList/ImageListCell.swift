@@ -6,26 +6,28 @@ final class ImagesListCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet var cellLabel: UILabel!
     @IBOutlet var cellImage: UIImageView!
+    @IBOutlet var gradientImageView: UIImageView!
     
-    override func layoutSubviews() {
-            cellImage.layer.sublayers = nil
+    
+        override func layoutSubviews() {
+            gradientImageView.layer.sublayers = nil
             setupGradient()
         }
         
         override func prepareForReuse() {
-            cellImage.layer.sublayers = nil
+            gradientImageView.layer.sublayers = nil
         }
         
         func setupGradient() {
-            let height = bounds.height
-            let width = bounds.width
-            let heightGradient: CGFloat = 30
+            let height = cellLabel.bounds.height
+            let widht = gradientImageView.bounds.width
             
             let colorTop = UIColor.imageStartGradient.cgColor
             let colorBot = UIColor.imageEndGradient.cgColor
+            
             let gradientLayer = CAGradientLayer()
-            gradientLayer.frame = CGRect(x: 0, y: height - heightGradient, width: width, height: heightGradient)
+            gradientLayer.frame  = CGRect(x: 1, y: height, width: widht, height: height)
             gradientLayer.colors = [colorTop, colorBot]
-            cellImage.layer.insertSublayer(gradientLayer, at: 0)
+            gradientImageView.layer.insertSublayer(gradientLayer, at: 0)
         }
 }

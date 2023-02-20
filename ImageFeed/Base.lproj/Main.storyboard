@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" name="YP Black (iOS)"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImagesListCell" rowHeight="122" id="HoG-Ce-cqD" customClass="ImagesListCell" customModule="ImageFeed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImagesListCell" rowHeight="122" id="HoG-Ce-cqD" customClass="ImagesListCell" customModule="ImageFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HoG-Ce-cqD" id="N2e-e5-ryF">
@@ -37,25 +37,32 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 февраля 2023 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK7-ZU-pMP" userLabel="CellLabel">
-                                                    <rect key="frame" x="28" y="82.666666666666671" width="137.66666666666666" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="YP White (iOS)"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQX-1X-8re" userLabel="LikeButton">
                                                     <rect key="frame" x="318.66666666666669" y="12" width="30" height="26"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="Active"/>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9yL-5X-czM">
+                                                    <rect key="frame" x="16" y="78" width="343" height="40"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 февраля 2023 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK7-ZU-pMP" userLabel="CellLabel">
+                                                    <rect key="frame" x="28" y="82" width="137.66666666666666" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="YP White (iOS)"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="oK7-ZU-pMP" secondAttribute="bottom" constant="8" id="30Q-w0-q0S"/>
+                                                <constraint firstItem="oK7-ZU-pMP" firstAttribute="top" secondItem="9yL-5X-czM" secondAttribute="top" constant="4" id="1qg-MW-reV"/>
+                                                <constraint firstItem="1GX-p2-8sJ" firstAttribute="bottomMargin" secondItem="oK7-ZU-pMP" secondAttribute="bottom" constant="8" id="30Q-w0-q0S"/>
                                                 <constraint firstItem="1GX-p2-8sJ" firstAttribute="trailing" secondItem="vQX-1X-8re" secondAttribute="trailing" constant="10.5" id="9JC-dy-5Hu"/>
                                                 <constraint firstItem="1GX-p2-8sJ" firstAttribute="leading" secondItem="N2e-e5-ryF" secondAttribute="leading" constant="16" id="BGg-rm-f1K"/>
+                                                <constraint firstItem="1GX-p2-8sJ" firstAttribute="trailing" secondItem="9yL-5X-czM" secondAttribute="trailing" id="Eyv-vN-cbO"/>
                                                 <constraint firstAttribute="trailing" secondItem="1GX-p2-8sJ" secondAttribute="trailing" constant="16" id="F5q-3A-8vi"/>
                                                 <constraint firstAttribute="bottom" secondItem="1GX-p2-8sJ" secondAttribute="bottom" constant="4" id="IWH-rM-CKC"/>
                                                 <constraint firstItem="1GX-p2-8sJ" firstAttribute="top" secondItem="N2e-e5-ryF" secondAttribute="top" constant="4" id="XkT-Iz-ueq"/>
+                                                <constraint firstItem="9yL-5X-czM" firstAttribute="leading" secondItem="1GX-p2-8sJ" secondAttribute="leading" id="YbF-dw-0bJ"/>
+                                                <constraint firstItem="9yL-5X-czM" firstAttribute="bottom" secondItem="1GX-p2-8sJ" secondAttribute="bottom" id="gdq-qf-5ry"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oK7-ZU-pMP" secondAttribute="trailing" constant="20" symbolic="YES" id="ior-xu-Rcn"/>
                                                 <constraint firstItem="vQX-1X-8re" firstAttribute="top" secondItem="N2e-e5-ryF" secondAttribute="top" constant="12" id="uh3-x7-eWm"/>
                                                 <constraint firstItem="vQX-1X-8re" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1GX-p2-8sJ" secondAttribute="leading" symbolic="YES" id="yLs-oi-bDH"/>
@@ -66,6 +73,7 @@
                                         <connections>
                                             <outlet property="cellImage" destination="1GX-p2-8sJ" id="8DL-Nf-7dr"/>
                                             <outlet property="cellLabel" destination="oK7-ZU-pMP" id="5Ib-oY-5UX"/>
+                                            <outlet property="gradientImageView" destination="9yL-5X-czM" id="tQ4-wL-LKA"/>
                                             <outlet property="likeButton" destination="vQX-1X-8re" id="KZP-H7-tCo"/>
                                         </connections>
                                     </tableViewCell>

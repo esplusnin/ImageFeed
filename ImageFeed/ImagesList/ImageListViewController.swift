@@ -5,9 +5,7 @@ class ImageListViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
     @IBOutlet private var tableView: UITableView!
-    
 
-    
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
     override func viewDidLoad() {
@@ -32,7 +30,6 @@ class ImageListViewController: UIViewController {
             cell.likeButton.imageView?.image = UIImage(named: "No Active")
         }
     }
-    
 }
 
 extension ImageListViewController: UITableViewDelegate {
@@ -54,7 +51,6 @@ extension ImageListViewController: UITableViewDelegate {
     }
 }
 
-    
 extension ImageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath)
