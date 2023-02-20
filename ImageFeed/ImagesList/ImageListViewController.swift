@@ -2,14 +2,11 @@ import UIKit
 
 class ImageListViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+    
     @IBOutlet private var tableView: UITableView!
     
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        return formatter
-    }()
+
     
     private let photosName: [String] = Array(0..<20).map{ "\($0)" }
     
@@ -27,6 +24,7 @@ class ImageListViewController: UIViewController {
         
         guard let photo = image else { return }
         cell.cellImage.image = photo
+        cell.cellLabel.text = Date().currentDate
         
         if indexPath.row % 2 == 0 {
             cell.likeButton.imageView?.image = UIImage(named: "Active")
@@ -34,15 +32,13 @@ class ImageListViewController: UIViewController {
             cell.likeButton.imageView?.image = UIImage(named: "No Active")
         }
     }
+    
 }
 
 extension ImageListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         photosName.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,13 +68,5 @@ extension ImageListViewController: UITableViewDataSource {
         return imageListCell
     }
 }
-
-extension UIImage {
-    func getDifferenceOfSize() -> CGFloat {
-        let widhtDifference = CGFloat( self.size.width / self.size.height)
-        return widhtDifference
-    }
-}
-
     
     

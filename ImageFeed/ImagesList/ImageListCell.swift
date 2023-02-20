@@ -21,8 +21,8 @@ final class ImagesListCell: UITableViewCell {
             let width = bounds.width
             let heightGradient: CGFloat = 30
             
-            let colorTop = UIColor(red: 26, green: 27, blue: 34, alpha: 0.0).cgColor
-            let colorBot = UIColor(red: 26, green: 27, blue: 34, alpha: 0.2).cgColor
+            let colorTop = UIColor.imageStartGradient.cgColor
+            let colorBot = UIColor.imageEndGradient.cgColor
             let gradientLayer = CAGradientLayer()
             gradientLayer.frame = CGRect(x: 0, y: height - heightGradient, width: width, height: heightGradient)
             gradientLayer.colors = [colorTop, colorBot]
