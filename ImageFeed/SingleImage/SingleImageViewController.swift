@@ -12,4 +12,3 @@ final class SingleImageViewController: UIViewController {
         imageView.image = image
     }
 }
-
