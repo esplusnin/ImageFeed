@@ -7,6 +7,10 @@ final class SingleImageViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
+    @IBAction func didTapBackButton() {
+        dismiss(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
