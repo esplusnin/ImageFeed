@@ -14,13 +14,13 @@ final class SingleImageViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     
-    @IBAction func didTapShareButton() {
+    @IBAction private func didTapShareButton() {
         guard let shareImage = image else { return }
         let shareController = UIActivityViewController(activityItems: [shareImage], applicationActivities: nil)
         present(shareController, animated: true)
     }
     
-    @IBAction func didTapBackButton() {
+    @IBAction private func didTapBackButton() {
         dismiss(animated: true)
     }
     
