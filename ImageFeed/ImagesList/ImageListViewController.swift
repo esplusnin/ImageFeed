@@ -19,11 +19,14 @@ class ImageListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ShowSingleImageSegueIdentifier {
-            let viewController = segue.destination as? SingleImageViewController
-            let indexPath = sender as! IndexPath
+            guard let viewController = segue.destination as? SingleImageViewController else {
+                return
+            }
+            guard let indexPath = sender as? IndexPath else {
+                return
+            }
             let image = UIImage(named: photosName[indexPath.row])
-            _ = viewController?.view
-            viewController?.imageView.image = image
+            viewController.image = image
         } else {
             super.prepare(for: segue, sender: sender)
         }
